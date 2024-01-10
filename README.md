@@ -1,4 +1,5 @@
 # Huawei Mobile Services Plugin for Unity
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/661eabe894f944c9a71737392b9805f9)](https://app.codacy.com/gh/Andronovo-bit/hms-unity-plugin?utm_source=github.com&utm_medium=referral&utm_content=Andronovo-bit/hms-unity-plugin&utm_campaign=Badge_Grade)
 [![latestV](https://img.shields.io/github/v/release/EvilMindDevs/hms-unity-plugin?color=E10027&label=Latest%20Version&style=plastic)](https://github.com/EvilMindDevs/hms-unity-plugin/releases)
 <br />
 [![Official Documentation](https://img.shields.io/badge/Documentation-9146FF?style=plastic&logo=gitbook&logoColor=white)](https://evilminddevs.gitbook.io/hms-unity-plugin/)
