@@ -230,7 +230,7 @@ namespace HmsPlugin
 
                 }).AddOnFailureListener((exception) =>
                 {
-                    Debug.LogError("[HMS:] AndroidBitmap put it UI failed exception"+ exception.Message);
+                    Debug.LogError("[HMS:] AndroidBitmap put it UI failed exception" + exception.Message);
                 });
             }
         }

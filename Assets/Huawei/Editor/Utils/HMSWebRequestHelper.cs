@@ -189,7 +189,7 @@ public class HMSWebRequestBehaviour : MonoBehaviour
         {
             yield return asyncOp;
         }
-        
+
 #if UNITY_2020_1_OR_NEWER
         var requestError =
            request.result == UnityWebRequest.Result.ProtocolError ||

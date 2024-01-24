@@ -48,7 +48,8 @@ namespace HmsPlugin
 
             if (_dependentToggleList.Count > 1)
             {
-                foreach (IDependentToggle _dependentToggle in _dependentToggleList) {
+                foreach (IDependentToggle _dependentToggle in _dependentToggleList)
+                {
                     _dependentToggle.SetToggle();
                 }
             }
@@ -69,7 +70,7 @@ namespace HmsPlugin
 
         public override void RefreshToggles()
         {
-            if (_toggle != null )
+            if (_toggle != null)
             {
                 _toggle.SetChecked(HMSMainEditorSettings.Instance.Settings.GetBool(DriveKitEnabled));
             }

@@ -11,8 +11,9 @@ namespace HmsPlugin
         private const string TAG = "[HMS] PlayerPrefsJsonDatabase ";
         private string prefsKey { get; set; }
 
-        public PlayerPrefsJsonDatabase(string prefsKey){
-           this.prefsKey = prefsKey;
+        public PlayerPrefsJsonDatabase(string prefsKey)
+        {
+            this.prefsKey = prefsKey;
         }
 
         public void Insert(T data)
@@ -31,7 +32,7 @@ namespace HmsPlugin
             else
             {
                 var list = new List<T> { data };
-                var newJson = JsonHelper.ToJson(list,true);
+                var newJson = JsonHelper.ToJson(list, true);
                 PlayerPrefs.SetString(prefsKey, newJson);
                 Debug.Log($"{TAG} {PlayerPrefs.GetString(prefsKey)}");
             }
@@ -47,14 +48,14 @@ namespace HmsPlugin
             {
                 Debug.LogFormat(TAG + "Key not found");
             }
-            
+
             var getJson = PlayerPrefs.GetString(prefsKey);
             var list = JsonHelper.FromJsonList<T>(getJson);
-            
+
             var newList = list.Where(item => !item.Equals(Id)).ToList();
-            
-            var newJson = JsonHelper.ToJson(newList,true);
-            
+
+            var newJson = JsonHelper.ToJson(newList, true);
+
             PlayerPrefs.DeleteKey(prefsKey);
             PlayerPrefs.SetString(prefsKey, newJson);
             PlayerPrefs.Save();
@@ -67,10 +68,10 @@ namespace HmsPlugin
             {
                 Debug.LogFormat(TAG + "Key not found");
             }
-            
+
             var getJson = PlayerPrefs.GetString(prefsKey);
             var list = JsonHelper.FromJsonList<T>(getJson);
-            
+
             var newList = new List<T>();
 
             foreach (var item in list)
@@ -84,9 +85,9 @@ namespace HmsPlugin
                     newList.Add(item);
                 }
             }
-            
+
             var newJson = JsonHelper.ToJson(newList);
-            
+
             PlayerPrefs.DeleteKey(prefsKey);
             PlayerPrefs.SetString(prefsKey, newJson);
             PlayerPrefs.Save();
@@ -100,14 +101,14 @@ namespace HmsPlugin
                 Debug.LogFormat(TAG + "Key not found");
 
             }
-            
+
             var getJson = PlayerPrefs.GetString(prefsKey);
             var list = JsonHelper.FromJsonList<T>(getJson);
-            
+
             var data = list.FirstOrDefault(item => item.Equals(Id));
             PlayerPrefs.Save();
             return data;
-        }    
+        }
         public List<T> GetAll()
         {
             var isExists = PlayerPrefs.HasKey(prefsKey) && PlayerPrefs.GetString(prefsKey) != "{}";
@@ -117,7 +118,7 @@ namespace HmsPlugin
                 Debug.LogFormat(TAG + "Key not found");
                 return Enumerable.Empty<T>().ToList();
             }
-            
+
             var getJson = PlayerPrefs.GetString(prefsKey);
             var list = JsonHelper.FromJsonList<T>(getJson);
             PlayerPrefs.Save();
