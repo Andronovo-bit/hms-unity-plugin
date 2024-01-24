@@ -75,7 +75,8 @@ public class Modeling3dDemoManager : MonoBehaviour
         string APIKEY = HMSModelingKitSettings.Instance.Settings.Get(HMSModelingKitSettings.ModelingKeyAPI);
         HMSModeling3dKitManager.Instance.AuthWithApiKey(APIKEY);
     }
-    public void OnUploadProgress(string taskId, double progress, AndroidJavaObject obj) {
+    public void OnUploadProgress(string taskId, double progress, AndroidJavaObject obj)
+    {
         progressBar.current = Mathf.RoundToInt((float)progress);
 
         HMSDispatcher.Invoke(() =>
@@ -93,7 +94,7 @@ public class Modeling3dDemoManager : MonoBehaviour
     public void OnResultUpload(string taskId, Modeling3dReconstructUploadResult result, AndroidJavaObject obj)
     {
         Debug.Log($"{TAG} Upload Result Android Obj: {obj?.GetRawObject()} and TaskId: {taskId} and Result: {result}");
-        if(result.Complate == true)
+        if (result.Complate == true)
         {
             HMSDispatcher.Invoke(() =>
             {
@@ -262,22 +263,23 @@ public class Modeling3dDemoManager : MonoBehaviour
         var modeling3D = modeling3dTaskEntity.Find(PlayerPrefs.GetString("currentTaskId"));
         var result = 1;
 
-        if (modeling3D.Type == 1) {
+        if (modeling3D.Type == 1)
+        {
             result = HMSModeling3dKitManager.Instance.CancelUpload3dReconstruct(modeling3D.TaskId);
 
         }
-        else if(modeling3D.Type == 2)
+        else if (modeling3D.Type == 2)
         {
             result = HMSModeling3dKitManager.Instance.CancelDownload3dReconstruct(modeling3D.TaskId);
         }
 
         if (result == 1)
         {
-            Debug.LogError(TAG + "Cancel failed"); 
+            Debug.LogError(TAG + "Cancel failed");
         }
         else
         {
-            Debug.Log(TAG+"Canceled successfully");
+            Debug.Log(TAG + "Canceled successfully");
             progressBar.progressType = "Cancelling";
             HMSDispatcher.Invoke(() =>
             {
@@ -314,13 +316,15 @@ public class Modeling3dDemoManager : MonoBehaviour
         DestoryChildrenByType(taskListItemParentObj, typeof(TaskListDisplay));
         CreateTaskListItem(taskListData, taskListItem, taskListItemParentObj);
     }
-    private void CreateTaskListItem(List<Modeling3dDTO> taskListData, TaskListDisplay taskListItem, GameObject taskListItemParentObj){
+    private void CreateTaskListItem(List<Modeling3dDTO> taskListData, TaskListDisplay taskListItem, GameObject taskListItemParentObj)
+    {
         foreach (var task in taskListData)
         {
             taskListItem.Name.text = $"{task.TaskId} \n {task.Name}";
             taskListItem.Status.text = task.Status;
             taskListItem.Image.color = Color.white;
-            if(!string.IsNullOrWhiteSpace(task.CoverImagePath)){
+            if (!string.IsNullOrWhiteSpace(task.CoverImagePath))
+            {
                 taskListItem.RawImage.gameObject.SetActive(true);
                 byte[] bytes = File.ReadAllBytes(task.CoverImagePath);
                 Texture2D texture = new Texture2D(100, 100);

@@ -53,7 +53,7 @@ namespace HmsPlugin
             if (refreshAssets)
                 AssetDatabase.Refresh();
         }
-        
+
         [Serializable]
         public class AssemblyDefinitionInfo
         {
