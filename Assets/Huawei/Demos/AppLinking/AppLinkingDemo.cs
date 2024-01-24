@@ -59,7 +59,7 @@ public class AppLinkingDemo : MonoBehaviour
 
     public void CreateAppLinking()
     {
-        Debug.Log(TAG+"CreateAppLinking");
+        Debug.Log(TAG + "CreateAppLinking");
 
         AppLinking.Builder builder = new AppLinking.Builder();
 
