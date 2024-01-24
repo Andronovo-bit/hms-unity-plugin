@@ -1,5 +1,19 @@
 version = 1
 
+exclude_patterns = [
+  "UserSettings/**",
+  "**/*.meta",
+  "Assets/*.meta",
+  "Assets/**/*.meta",
+  "Assets/**/**/*.meta",
+  "Assets/**/**/**/*.meta",
+  "Assets/Huawei/Dlls/**",
+  "Assets/Huawei/Plugins/**",
+  "Assets/Huawei/Prefabs/**",
+  "Assets/Huawei/Resources/**",
+  "Assets/Huawei/Settings/**"
+]
+
 [[analyzers]]
 name = "csharp"
 
