@@ -43,7 +43,7 @@ namespace Huawei.Demos.Location
             {
                 Debug.Log($"{TAG} ActivityIdentification OnReceive success");
                 isIntentUsed = true;
-                
+
                 var activityIdentificationResponse = ActivityIdentificationResponse.GetDataFromIntent(intent);
 
                 if (activityIdentificationResponse != null)
