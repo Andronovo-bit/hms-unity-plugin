@@ -38,7 +38,7 @@ public class HMSMainWindow : HMSEditorWindow
     [MenuItem("Huawei/Utils/Key Tool")]
     public static void KeyTool()
     {
-       GetWindow(typeof(HMSKeyToolWindow), false, "HMS Key Tool", true);
+        GetWindow(typeof(HMSKeyToolWindow), false, "HMS Key Tool", true);
     }
 
     public override IDrawer CreateDrawer()
