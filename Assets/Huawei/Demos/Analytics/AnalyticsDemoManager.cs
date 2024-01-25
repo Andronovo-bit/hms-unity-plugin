@@ -38,11 +38,11 @@ namespace HmsPlugin
         {
             if (string.IsNullOrEmpty(eventIdFieldText) && string.IsNullOrEmpty(keyFieldtext) && string.IsNullOrEmpty(valueFieldText))
             {
-                Debug.Log(TAG+": Fill Fields");
+                Debug.Log(TAG + ": Fill Fields");
             }
             else
             {
-                Debug.Log(TAG+eventIdFieldText + " " + keyFieldtext + " " + valueFieldText);
+                Debug.Log(TAG + eventIdFieldText + " " + keyFieldtext + " " + valueFieldText);
                 HMSAnalyticsKitManager.Instance.SendEventWithBundle(eventIdFieldText, keyFieldtext, valueFieldText);
             }
         }
