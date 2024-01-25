@@ -27,7 +27,7 @@ namespace HmsPlugin
         {
             if (string.IsNullOrEmpty(unionID) || string.IsNullOrEmpty(at))
             {
-               return DriveCode.ERROR;
+                return DriveCode.ERROR;
             }
             DriveCredential.Builder builder = new DriveCredential.Builder(unionID, refreshAT);
             mDriveCredential = builder.Build().SetAccessToken(at);
@@ -39,7 +39,7 @@ namespace HmsPlugin
             return mDriveCredential;
         }
 
-    public bool InitDrive(HuaweiMobileServices.Id.AuthAccount HuaweiID) 
+        public bool InitDrive(HuaweiMobileServices.Id.AuthAccount HuaweiID)
         {
             int returnCode = Init(HuaweiID.UnionId, HuaweiID.AccessToken, new AccessMethodHelper());
 
