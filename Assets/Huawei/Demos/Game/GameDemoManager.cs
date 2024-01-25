@@ -160,7 +160,7 @@ public class GameDemoManager : MonoBehaviour
 
     private void OnIsAllowContinuePlayGamesSuccess(bool isAllow)
     {
-        Debug.Log(TAG + "IsAllowContinuePlayGames SUCCESS. isAllow:"+ isAllow);
+        Debug.Log(TAG + "IsAllowContinuePlayGames SUCCESS. isAllow:" + isAllow);
     }
 
     private void OnGetUserPlayStateSuccess(int state)
