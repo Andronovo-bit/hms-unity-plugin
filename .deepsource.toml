@@ -16,7 +16,8 @@ exclude_patterns = [
   "Assets/Huawei/Plugins/**",
   "Assets/Huawei/Prefabs/**",
   "Assets/Huawei/Resources/**",
-  "Assets/Huawei/Settings/**"
+  "Assets/Huawei/Settings/**",
+  "Assets/Huawei/Demos/**"
 ]
 
 [[analyzers]]
