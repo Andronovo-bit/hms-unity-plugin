@@ -13,7 +13,7 @@ namespace HmsPlugin
         {
             if (_tabs != null && _tabs.Find(c => c.Title == tab.Title) != null)
                 return;
-            
+
             _tabs.Add(tab);
             RefreshTabNames();
         }
