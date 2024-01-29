@@ -52,8 +52,8 @@ namespace HmsPlugin.TextField
         public void ClearInput()
         {
             _text = "";
-            
-            if(OnValueChanged != null)
+
+            if (OnValueChanged != null)
                 OnValueChanged.DynamicInvoke(_text);
         }
 
