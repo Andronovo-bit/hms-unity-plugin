@@ -145,7 +145,7 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
             bottomDrawer.AddDrawer(new HorizontalSequenceDrawer(new Spacer(), new Button.Button("Create Product", OnCreateProductClick).SetWidth(300).SetBGColor(Color.green), new Spacer()));
         }
 
-        private Boolean CheckParameters() 
+        private Boolean CheckParameters()
         {
             if (productNoTextField.GetCurrentText() == "")
             {
@@ -177,12 +177,12 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
             {
                 foreach (var item in languagesFoldout.GetLanguages())
                 {
-                    if (item.Desc == "" || item.Name == "") 
+                    if (item.Desc == "" || item.Name == "")
                     {
                         EditorUtility.DisplayDialog("Missing Parameter!", "Please check your language parameters.", "Ok");
                         return false;
                     }
-                    else if ( (item.Language == selectedLocale) && (item.Desc != descriptionTextField.GetCurrentText() || item.Name != productNameTextField.GetCurrentText()) ) // Extra language can same with default locale language if it has same name and description 
+                    else if ((item.Language == selectedLocale) && (item.Desc != descriptionTextField.GetCurrentText() || item.Name != productNameTextField.GetCurrentText())) // Extra language can same with default locale language if it has same name and description 
                     {
                         EditorUtility.DisplayDialog("Wrong Parameter!", "Default LanguageInfo is not the same in languages.", "Ok");
                         return false;
@@ -194,7 +194,7 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
 
         private void OnGenerateJsonClick()
         {
-            if(CheckParameters())    
+            if (CheckParameters())
                 GenerateJsonClass();
         }
 
@@ -238,16 +238,16 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
         {
             if (jsonClass == null)
             {
-                if (CheckParameters()) 
+                if (CheckParameters())
                 {
                     GenerateJsonClass();
                 }
-                else 
+                else
                 {
                     return;
                 }
             }
-            if(EditorUtility.DisplayDialog("Are you sure?", "Please make sure all of the parameters are correct.\n\nDo you want to submit?", "Submit", "Cancel")) 
+            if (EditorUtility.DisplayDialog("Are you sure?", "Please make sure all of the parameters are correct.\n\nDo you want to submit?", "Submit", "Cancel"))
             {
                 var token = await HMSWebUtils.GetAccessTokenAsync();
                 HMSWebRequestHelper.Instance.PostRequest("https://connect-api.cloud.huawei.com/api/pms/product-price-service/v1/manage/product",
