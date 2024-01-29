@@ -48,7 +48,7 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
             subGroupPeriodLabel = new Label.Label("Sub Period:");
             subGroupValueLabel = new Label.Label();
             statusToggle = new Toggle.Toggle("Status(Active/Inactive):", product.status == "active" ? true : false);
-            
+
             var currentLanguage = supportedLanguages.FirstOrDefault(c => c.Value == product.defaultLocale);
             int localeIndex = supportedLanguages.Keys.ToList().IndexOf(currentLanguage.Key);
             defaultLocaleDropdown = new Dropdown.StringDropdown(supportedLanguages.Keys.ToArray(), localeIndex, "Default Language", OnLanguageSelected);

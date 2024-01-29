@@ -49,7 +49,7 @@ public class AdsUIView : MonoBehaviour
     }
 
     #endregion
-   
+
     #region Button Events
 
     private void ButtonClick_ShowInterstitialAd()

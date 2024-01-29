@@ -119,7 +119,7 @@ public class HMSPluginUpdateRequest : MonoBehaviour
                     latestVersion = tempVer;
                 }
             }
-            catch 
+            catch
             {
                 //Debug.LogError("Version parse error!"+ list.tags[i].name.RemoveAfter('-').Replace("v", ""));
             }

@@ -27,7 +27,7 @@ namespace HmsPlugin
 
         public HMSPushKitManager()
         {
-            HMSManagerStart.Start(OnAwake,TAG);
+            HMSManagerStart.Start(OnAwake, TAG);
         }
 
         private void OnAwake()
@@ -37,7 +37,7 @@ namespace HmsPlugin
             notificationDataOnStart = PushManager.NotificationDataOnStart;
         }
 
-        public void Init() 
+        public void Init()
         {
             if (notificationDataOnStart.NotifyId != -1)
             {

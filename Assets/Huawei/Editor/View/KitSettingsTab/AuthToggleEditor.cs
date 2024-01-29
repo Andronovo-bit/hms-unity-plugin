@@ -60,7 +60,7 @@ namespace HmsPlugin
 
         public override void DisableToggle()
         {
-           Enabled = false;
+            Enabled = false;
         }
         public override void RemoveToggleTabView(bool removeTabs)
         {

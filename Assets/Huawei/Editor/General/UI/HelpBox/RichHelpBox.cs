@@ -9,7 +9,7 @@ namespace HmsPlugin.HelpBox
         private string _text;
         private GUIStyle _style = null;
         private bool _richTextEnabled = false;
-        
+
         public RichHelpbox(string text)
         {
             _text = text;

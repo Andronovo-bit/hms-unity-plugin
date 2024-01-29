@@ -71,13 +71,13 @@ namespace HmsPlugin.PublishingAPI
 
         private static bool AskBeforeUploadProcess(string filePath)
         {
-            float bytesToMegabytes= 1024f * 1024f;
+            float bytesToMegabytes = 1024f * 1024f;
             float megabytesToGigabytes = 1024f;
             float fileSize = (new FileInfo(filePath).Length) / bytesToMegabytes;
             bool isPackageAAB = UnityEditor.EditorUserBuildSettings.buildAppBundle;
 
             if (!isPackageAAB && fileSize >= 4 * megabytesToGigabytes ||
-                isPackageAAB && fileSize >= 150 )
+                isPackageAAB && fileSize >= 150)
             {
                 if (isPackageAAB)
                 {
@@ -92,7 +92,7 @@ namespace HmsPlugin.PublishingAPI
                 }
             }
 
-            return EditorUtility.DisplayDialog("Upload After Build?","Are you sure uploading package to AGC after build?\nFile Size: " +
+            return EditorUtility.DisplayDialog("Upload After Build?", "Are you sure uploading package to AGC after build?\nFile Size: " +
                fileSize + " MB", "Ok", "Cancel");
         }
 
@@ -141,7 +141,7 @@ namespace HmsPlugin.PublishingAPI
                 int size = responseJson.result.UploadFileRsp.fileInfoList[0].size;
                 string disposableUrl = responseJson.result.UploadFileRsp.fileInfoList[0].disposableURL;
                 string fileDestUrl = responseJson.result.UploadFileRsp.fileInfoList[0].fileDestUlr;
-                
+
                 UpdateFileInfo fileInfo = new UpdateFileInfo();
                 fileInfo.files = new Files();
                 fileInfo.files.fileName = PlayerSettings.productName + ((UnityEditor.EditorUserBuildSettings.buildAppBundle) ? ".aab" : ".apk");
@@ -173,7 +173,8 @@ namespace HmsPlugin.PublishingAPI
                 {
                     {"client_id", HMSConnectAPISettings.Instance.Settings.Get(HMSConnectAPISettings.ClientID) },
                     {"Authorization", "Bearer " + accessToken }
-                }, (res) => {
+                }, (res) =>
+                {
                     EditorUtility.DisplayProgressBar("Uploading The Package", "Getting Upload URL...", 0.3f);
                     onGetUploadUrl(res, filePath);
                 });
@@ -531,6 +532,6 @@ namespace HmsPlugin.PublishingAPI
             categoryLevel.Level3.Add(new KeyValuePair<int, string>(10093, "Nursery rhymes"));
             categoryLevel.Level3.Add(new KeyValuePair<int, string>(10094, "Mom & baby"));
         }
-#endregion
+        #endregion
     }
 }

@@ -50,7 +50,7 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
             item.Language = supportedLanguages.ElementAt(0).Value;
             item.Index = 0;
             var sequence = new VerticalSequenceDrawer();
-            
+
             sequence.AddDrawer(new Dropdown.StringDropdown(supportedLanguages.Keys.ToArray(), item.Index, "Languages", (index) =>
             {
                 item.Language = supportedLanguages.ElementAt(index).Value;

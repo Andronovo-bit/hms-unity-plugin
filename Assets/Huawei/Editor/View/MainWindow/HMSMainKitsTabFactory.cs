@@ -87,7 +87,7 @@ internal class HMSMainKitsTabFactory
                     new HorizontalSequenceDrawer(new Spacer(), cloudStorageToggleEditor, new Spacer()),
                     new HorizontalSequenceDrawer(new Spacer(), crashToggleEditor, new Spacer()),
                     new HorizontalSequenceDrawer(new Spacer(), remoteConfigToggleEditor, new Spacer())
-                    
+
                 )
             ));
         //tab.AddDrawer(new HorizontalLine());
