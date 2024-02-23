@@ -14,13 +14,11 @@ exclude_patterns = [
   "**/*.properties",
   "**/*.gradle",
   "Assets/StreamingAssets/**",
-  "Assets/Huawei/**",
   "Assets/Huawei/Dlls/**",
   "Assets/Huawei/Plugins/**",
   "Assets/Huawei/Prefabs/**",
   "Assets/Huawei/Resources/**",
-  "Assets/Huawei/Settings/**",
-  "Assets/Huawei/Scripts/**"
+  "Assets/Huawei/Settings/**"
 ]
 
 [[analyzers]]
