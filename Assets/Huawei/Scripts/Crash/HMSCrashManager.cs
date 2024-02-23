@@ -1,4 +1,4 @@
-﻿using HuaweiMobileServices.Crash;
+using HuaweiMobileServices.Crash;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 

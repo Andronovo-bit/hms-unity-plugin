@@ -1,4 +1,4 @@
-﻿using HmsPlugin.Window;
+using HmsPlugin.Window;
 using UnityEditor;
 
 namespace HmsPlugin

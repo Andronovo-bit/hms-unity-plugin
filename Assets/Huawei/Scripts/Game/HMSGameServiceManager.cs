@@ -54,7 +54,7 @@ namespace HmsPlugin
         {
             Debug.Log($"{TAG}: HMS GAMES init");
 
-            if (authAccount != null) 
+            if (authAccount != null)
             {
                 archivesClient = HMSSaveGameManager.Instance.GetArchivesClient();
                 InitJosApps(authAccount, antiAddictionCallback);
@@ -81,8 +81,8 @@ namespace HmsPlugin
         {
             authParams = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM_GAME).CreateParams();
 
-            AppParams appParams = (antiAddictionCallback != null) 
-                ? new AppParams(authParams, new AntiAddictionCallWrapper(antiAddictionCallback)) 
+            AppParams appParams = (antiAddictionCallback != null)
+                ? new AppParams(authParams, new AntiAddictionCallWrapper(antiAddictionCallback))
                 : new AppParams(authParams);
 
             HMSAccountKitManager.Instance.HuaweiId = result;
@@ -91,7 +91,7 @@ namespace HmsPlugin
             Debug.Log($"{TAG} HMS GAMES: jossClient");
             var init = josAppsClient.Init(appParams);
 
-            init.AddOnSuccessListener((aVoid) => 
+            init.AddOnSuccessListener((aVoid) =>
             {
                 GameInitSuccess?.Invoke(aVoid);
             });
@@ -273,7 +273,7 @@ namespace HmsPlugin
                 Debug.Log($"{TAG} OnUpdateInfo, status: {(AppUpdateStatusCode)status}," +
                     $" rtnCode: {(AppUpdateRtnCode)rtnCode}, rtnMessage: {rtnMessage}, buttonStatus: {(AppUpdateButtonStatus)buttonStatus}, isExit: {isExit}");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.LogError($"{TAG} Failed to parse status, rtnCode, or buttonStatus as their respective enums exception:{e.Message}");
             }

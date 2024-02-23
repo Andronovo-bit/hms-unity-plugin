@@ -1,4 +1,4 @@
-﻿using HmsPlugin.ConnectAPI.PMSAPI;
+using HmsPlugin.ConnectAPI.PMSAPI;
 
 namespace HmsPlugin
 {

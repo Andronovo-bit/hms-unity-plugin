@@ -1,4 +1,4 @@
-﻿using HmsPlugin.Button;
+using HmsPlugin.Button;
 using HmsPlugin.ConnectAPI;
 using System.IO;
 using UnityEngine;

@@ -88,7 +88,7 @@ namespace HmsPlugin
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("\t\tpublic " + GetFieldType(field.fieldType) + " " + field.fieldName.ToPascalCase() + "\n\t\t{");
-            
+
             string getter = string.Empty;
             string setter = string.Empty;
 

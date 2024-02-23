@@ -75,7 +75,7 @@ namespace HmsPlugin.ConnectAPI.PMSAPI
                 {"Authorization", "Bearer " + token},
                 {"appId", HMSEditorUtils.GetAGConnectConfig().client.app_id}
             };
-            
+
             HMSWebRequestHelper.Instance.PostRequest(
                 "https://connect-api.cloud.huawei.com/api/pms/product-price-service/v1/manage/product/list",
                 JsonUtility.ToJson(searchRequest),

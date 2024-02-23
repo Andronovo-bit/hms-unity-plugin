@@ -1,4 +1,4 @@
-﻿using HmsPlugin.PublishingAPI;
+using HmsPlugin.PublishingAPI;
 
 namespace HmsPlugin
 {
