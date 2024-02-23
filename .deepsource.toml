@@ -1,0 +1,30 @@
+version = 1
+
+exclude_patterns = [
+  "UserSettings/**",
+  ".github/**",
+  "**/*.meta",
+  "**/*.*.meta",
+  "**/*.asmdef",
+  "**/*.xml",
+  "**/*.java",
+  "**/*.prefab",
+  "**/*.dll",
+  "**/*.aar",
+  "**/*.properties",
+  "**/*.gradle",
+  "Assets/StreamingAssets/**",
+  "Assets/Huawei/**",
+  "Assets/Huawei/Dlls/**",
+  "Assets/Huawei/Plugins/**",
+  "Assets/Huawei/Prefabs/**",
+  "Assets/Huawei/Resources/**",
+  "Assets/Huawei/Settings/**",
+  "Assets/Huawei/Scripts/**"
+]
+
+[[analyzers]]
+name = "csharp"
+
+[[transformers]]
+name = "dotnet-format"
