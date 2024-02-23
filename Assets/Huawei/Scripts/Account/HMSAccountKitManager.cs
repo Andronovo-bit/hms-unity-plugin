@@ -80,7 +80,7 @@ namespace HmsPlugin
 
         public void SignIn(AccountAuthService authservice = null)
         {
-            if(authservice != null) 
+            if (authservice != null)
             {
                 this.authService = authservice;
                 Debug.LogWarning($"{TAG}: Sign in: You are overriding authService with:{authservice}");

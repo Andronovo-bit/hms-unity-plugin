@@ -1,4 +1,4 @@
-﻿using HuaweiMobileServices.AppMessaging;
+using HuaweiMobileServices.AppMessaging;
 using HuaweiMobileServices.Base;
 using HuaweiMobileServices.Id;
 using System;

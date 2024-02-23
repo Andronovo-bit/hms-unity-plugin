@@ -15,7 +15,7 @@ namespace HmsPlugin
 
         public IEnumerable<TKey> Keys => _keys;
         public IEnumerable<TValue> Values => _values;
-        
+
         public virtual void Set(TKey key, TValue value)
         {
             var keyIndex = GetKeyIndex(key);

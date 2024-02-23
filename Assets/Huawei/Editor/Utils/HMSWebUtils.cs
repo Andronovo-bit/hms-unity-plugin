@@ -1,4 +1,4 @@
-﻿using HmsPlugin;
+using HmsPlugin;
 using System;
 using System.Threading.Tasks;
 using UnityEditor;

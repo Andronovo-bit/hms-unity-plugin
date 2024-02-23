@@ -1,4 +1,4 @@
-﻿using HmsPlugin;
+using HmsPlugin;
 using HmsPlugin.Window;
 
 using UnityEditor;
