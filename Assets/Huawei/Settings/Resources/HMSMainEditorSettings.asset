@@ -34,7 +34,11 @@ MonoBehaviour:
     - CloudStorage
     - APM
     - Modeling3dkit
+    - HMSCoreInstalled
+    - MLKit
     _values:
+    - True
+    - False
     - True
     - False
     - False
@@ -53,5 +57,5 @@ MonoBehaviour:
     - False
     - False
     - False
-    - False
-    - False
+    - True
+    - True

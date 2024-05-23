@@ -10,24 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7670dcedaa35dad46bcf6c7687c52728, type: 3}
-  m_Name: HMSAdsKitSettings
+  m_Name: HMSMLKitSettings
   m_EditorClassIdentifier: 
   settings:
     _keys:
-    - EnableBannerAd
-    - EnableInterstitialAd
-    - EnableRewardedAd
-    - UseTestAds
-    - BannerAdID
-    - InterstitialAdID
-    - RewardedAdID
+    - MLKeyAPI
     - EnableTranslateModule
     _values:
-    - True
-    - False
-    - False
-    - False
-    - 
-    - 
-    - 
+    - DAEDAGtU1aO9158M5/1uIFS57ZkwmQhmep73W5AFzVyw63yA9I5JjgAZdEq5A03pFZp4OGcBORXVd6OBKFwRvye5GoqR2lTbW216qA==
     - True
