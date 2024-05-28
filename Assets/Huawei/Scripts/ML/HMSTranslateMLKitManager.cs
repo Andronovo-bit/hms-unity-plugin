@@ -7,6 +7,7 @@ using HuaweiMobileServices.Base;
 using HuaweiMobileServices.ML.Common;
 using HuaweiMobileServices.ML.DownloadModel;
 using HuaweiMobileServices.ML.Translate;
+using HuaweiMobileServices.ML.Translate.Cloud;
 using HuaweiMobileServices.ML.Translate.Local;
 using UnityEngine;
 public class HMSTranslateMLKitManager : HMSManagerSingleton<HMSTranslateMLKitManager>
@@ -93,15 +94,13 @@ public class HMSTranslateMLKitManager : HMSManagerSingleton<HMSTranslateMLKitMan
             Debug.LogError(TAG + "StartTranslate: PraparedModel: " + exception.WrappedCauseMessage);
         });
     }
-
     public void StartTranslate2(string text) //Method1
     {
         // After the download is successful, translate text in the onSuccess callback.
+
         // Obtain the model manager.
         MLLocalModelManager manager = MLLocalModelManager.Instance;
-        MLLocalTranslatorModel model = new MLLocalTranslatorModel.Factory(sourceLangCode).Create();
-        Debug.Log(TAG + "StartTranslate2: " + model.LanguageCode);
-        Debug.Log(TAG + "StartTranslate2: " + model.ToString());
+        MLLocalTranslatorModel model = new MLLocalTranslatorModel.Factory(targetLangCode).Create();
         // Set the model download policy.
         MLModelDownloadStrategy downloadStrategy = new MLModelDownloadStrategy.Factory()
             .NeedWifi() // It is recommended that you download the package in a Wi-Fi environment.
@@ -129,4 +128,44 @@ public class HMSTranslateMLKitManager : HMSManagerSingleton<HMSTranslateMLKitMan
             Debug.LogError(TAG + "StartTranslate2: DownloadModel: " + exception.WrappedCauseMessage);
         });
     }
+
+    public void StartTranslateRemote(string text)
+    {
+        MLRemoteTranslateSetting mLRemoteTranslateSetting = new MLRemoteTranslateSetting.Factory()
+            .SetSourceLangCode(sourceLangCode)
+            .SetTargetLangCode(targetLangCode)
+            .Create();
+
+        MLRemoteTranslator mlRemoteTranslator = MLTranslatorFactory.Instance.GetRemoteTranslator(mLRemoteTranslateSetting);
+
+        try
+        {
+            MLTranslateLanguage.GetCloudAllLanguagesAsync().AddOnSuccessListener((result) =>
+            {
+                Debug.Log(TAG + "StartTranslateRemote: GetCloudAllLanguagesAsync: " + result.Count);
+            }).AddOnFailureListener((exception) =>
+            {
+                Debug.LogError(TAG + "StartTranslateRemote: GetCloudAllLanguagesAsync: " + exception.WrappedCauseMessage);
+            });
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(TAG + "StartTranslateRemote: " + e.Message);
+        }
+
+        mlRemoteTranslator.TranslateAsync(text).AddOnSuccessListener((result) =>
+        {
+            Debug.Log(TAG + "StartTranslateRemote: TranslateAsync: " + result);
+
+            if (mlRemoteTranslator != null)
+            {
+                mlRemoteTranslator.Stop();
+            }
+
+        }).AddOnFailureListener((exception) =>
+        {
+            Debug.LogError(TAG + "StartTranslateRemote: TranslateAsync: " + exception.WrappedCauseMessage);
+        });
+    }
+
 }

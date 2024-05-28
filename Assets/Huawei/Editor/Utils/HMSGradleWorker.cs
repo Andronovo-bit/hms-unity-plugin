@@ -62,7 +62,7 @@ namespace HmsPlugin
                         "com.huawei.hms:ml-computer-agc-inner:3.11.2.300",
                         // Import the base SDK.
                         "com.huawei.hms:ml-computer-translate:3.11.0.302",
-                        // Import the bee voice package.
+                        // Import the bee translate package.
                         "com.huawei.hms:ml-computer-translate-model:3.11.0.302",
                     }
                 },

@@ -10,9 +10,11 @@ public class TranslateDemoManager : MonoBehaviour
         Debug.Log("TranslateDemo Start");
         var instance = HMSTranslateMLKitManager.Instance;
         //instance.GetLocalAllLanguages();
-        instance.StartTranslate("How are you ?");
+        // instance.StartTranslate("How are you ?");
 
         instance.StartTranslate2("Where are you from ?");
+
+        // instance.StartTranslateRemote("What is your name ?");
     }
 
     // Update is called once per frame
