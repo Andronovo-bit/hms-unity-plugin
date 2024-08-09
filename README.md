@@ -29,7 +29,11 @@ The HMS Unity plugin helps you integrate the full power of Huawei Mobile Service
 * In-App Comments
 * Remote Configuration
 * 3D Modeling Kit (Beta)
-* ML Kit (Translation & Text-To-Speech)
+* ML Kit
+  * Translation
+  * Text-To-Speech
+  * Language Detection
+  * Text Recognition
 
 ## Requirements
 Android SDK min 21
