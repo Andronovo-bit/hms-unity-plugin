@@ -91,7 +91,7 @@ public class HMSMLTextRecognitionKitManager : HMSManagerSingleton<HMSMLTextRecog
         languages ??= new List<LanguageCodes> { onlineDefaultLanguageCode };
         var setting = new MLRemoteTextSetting.Factory()
             .SetBorderType(borderType ?? MLRemoteTextSetting.ARC)
-            .SetLanguageList(languages.Select(lang => LanguageDict.GetValueOrDefault(lang)).ToList())
+            .SetLanguageList(languages.Select(lang => LanguageDict.TryGetValue(lang, out var value) ? value : LanguageDict[onlineDefaultLanguageCode]).ToList())
             .SetTextDensityScene(onlineDefaultDetectMode)
             .Create();
 
